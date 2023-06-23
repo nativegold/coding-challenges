@@ -10,8 +10,7 @@ def solution(progresses, speeds):
         
         complete_days.append(needed_days)
     
-    
-    for day in range(max(complete_days)+1):
+    for day in range(max(complete_days) + 1):
         completed = 0
         for i in range(len(complete_days)): 
             if complete_days[i] <= day:
