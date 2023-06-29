@@ -1,5 +1,3 @@
-from math import floor
-
 def solution(price):
     answer = 0
     
@@ -12,6 +10,4 @@ def solution(price):
     else:
         answer = price
     
-    answer = floor(answer)
-    
-    return answer
+    return int(answer)
