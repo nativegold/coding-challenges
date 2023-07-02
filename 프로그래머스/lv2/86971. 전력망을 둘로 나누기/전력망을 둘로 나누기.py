@@ -17,16 +17,21 @@ def bfs(graph, start):
     return cnt
 
 def solution(n, wires):
+    # 송전탑 개수의 차이
     answer = n
-    graph = {}
+    # 그래프(딕셔너리)
+    graph = {}  
     
+    # 그래프 초기화
     for i in range(1, n+1):
         graph[i] = []
-        
+    
+    # 간선 추가
     for v1, v2 in wires:
         graph[v1].append(v2)
         graph[v2].append(v1)
     
+    # 간선 지우는 경우에 따라 BFS로 탐색하여 최솟값 찾기
     for v1, v2 in wires:
         graph[v1].remove(v2)
         graph[v2].remove(v1)
