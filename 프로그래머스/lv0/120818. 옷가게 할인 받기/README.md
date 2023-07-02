@@ -1,6 +1,6 @@
 # [level 0] 옷가게 할인 받기 - 120818 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120818?language=python3) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120818) 
 
 ### 성능 요약
 
