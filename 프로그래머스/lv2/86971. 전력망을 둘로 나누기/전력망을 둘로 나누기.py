@@ -1,14 +1,17 @@
 from collections import deque
 
 def bfs(graph, start):
-    visited = [start]
-    queue = deque([start])
-    cnt = 0
+    visited = [start]   # 방문한 정점
+    queue = deque([start])  # BFS 구현하는 큐
+    cnt = 0     # 정점의 수
 
+    # 큐에 원소가 남아있는 경우
     while queue:
         v = queue.popleft()
-
+        
+        # 정점과 연결된 간선 탐색
         for w in graph[v]:
+            # 정점과 연결된 정점이 방문되지 않았을 경우
             if w not in visited:
                 visited.append(w)
                 queue.append(w)
