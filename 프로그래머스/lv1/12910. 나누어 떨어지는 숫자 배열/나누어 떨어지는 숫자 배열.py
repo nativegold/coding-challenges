@@ -1,5 +1,3 @@
 def solution(arr, divisor):
-    li = [n for n in arr if n % divisor == 0]
-    li.sort()
-    return li if li != [] else [-1]
+    return sorted([n for n in arr if n % divisor == 0]) or [-1]
         
