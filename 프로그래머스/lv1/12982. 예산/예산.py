@@ -3,6 +3,7 @@ def solution(d, budget):
     count = 0
     
     d.sort()
+    
     for n in d:
         if budget_result + n <= budget:
             budget_result += n
