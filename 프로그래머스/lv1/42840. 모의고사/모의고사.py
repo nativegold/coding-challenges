@@ -1,5 +1,5 @@
 def solution(answers):
-    answer = []
+    result = []
     score = [0] * 3
     index = [0] * 3
     way1 = [1, 2, 3, 4, 5]
@@ -27,7 +27,7 @@ def solution(answers):
     
     for i, s in enumerate(score):
         if s == max(score):
-            answer.append(i+1)
+            result.append(i+1)
             
-    return answer
+    return result
     
