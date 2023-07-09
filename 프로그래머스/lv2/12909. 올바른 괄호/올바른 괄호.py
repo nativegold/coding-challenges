@@ -5,10 +5,10 @@ def solution(s):
     end = 0
     
     for c in s:
-        if(start < end):
+        if start < end:
             return False
         
-        if(c == '('):
+        if c == '(':
             start += 1
         else:
             end += 1
