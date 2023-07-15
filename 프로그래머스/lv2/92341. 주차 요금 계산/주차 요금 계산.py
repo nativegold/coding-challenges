@@ -21,10 +21,9 @@ def solution(fees, records):
         elif state == 'OUT':   # 출차 기록인 경우
             if number in parking_time:
                 parking_time[number] += minutes - in_time[number]
-                in_time.pop(number)
             else:
                 parking_time[number] = minutes - in_time[number]
-                in_time.pop(number)
+            in_time.pop(number)
     
     # 출차된 내역 없는 기록 정리
     for number, in_minutes in in_time.items():
