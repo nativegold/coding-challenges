@@ -1,6 +1,8 @@
+from collections import deque
+
 k = int(input())
 
-stack = []
+stack = deque()
 
 for _ in range(k):
     n = int(input())
@@ -11,4 +13,3 @@ for _ in range(k):
         stack.append(int(n))
 
 print(sum(stack))
-
