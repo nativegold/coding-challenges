@@ -1,0 +1,25 @@
+SELECT P.YEAR
+    , P.MONTH
+    , P.PURCHASED_USERS
+    , ROUND(P.PURCHASED_USERS / USER_COUNT, 1) PURCHASED_RATIO
+FROM 
+    (
+        SELECT 
+            TO_CHAR(S.SALES_DATE, 'YYYY') AS YEAR
+            , TO_CHAR(S.SALES_DATE, 'FMMM') AS MONTH
+            , COUNT(DISTINCT(I.USER_ID)) PURCHASED_USERS
+        FROM 
+            USER_INFO I
+            , ONLINE_SALE S
+        WHERE 1=1
+            AND I.USER_ID = S.USER_ID
+            AND TO_CHAR(I.JOINED, 'YYYY') = '2021'
+        GROUP BY 
+            TO_CHAR(S.SALES_DATE, 'YYYY')
+            , TO_CHAR(S.SALES_DATE, 'FMMM')
+    ) P,
+    (
+        SELECT COUNT(USER_ID) USER_COUNT
+        FROM USER_INFO
+        WHERE TO_CHAR(JOINED, 'YYYY') = '2021'
+    ) C
