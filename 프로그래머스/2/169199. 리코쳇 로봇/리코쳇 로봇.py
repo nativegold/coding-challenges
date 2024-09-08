@@ -5,8 +5,6 @@ def solution(board):
 
     rows, cols = len(board), len(board[0])
     distances = [[float('inf')] * cols for _ in range(rows)]
-
-    print(distances)
     
     queue = deque()
 
