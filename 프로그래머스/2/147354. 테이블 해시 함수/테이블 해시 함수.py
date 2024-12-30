@@ -1,7 +1,7 @@
 def solution(data, col, row_begin, row_end):
     data.sort(key = lambda x: (x[col - 1], -x[0]))
     
-    s_list = []
+    result = 0
     
     for index, t in enumerate(data):
         i = index + 1
@@ -14,11 +14,6 @@ def solution(data, col, row_begin, row_end):
         for value in t:
             s += value % i
             
-        s_list.append(s)
-    
-    result = 0
-    
-    for s in s_list:
-        result = result ^ s
+        result ^= s
     
     return result
