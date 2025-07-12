@@ -24,15 +24,11 @@ def calculate(number, width):
 def solution(n, w, num):
     answer = 0
     
-    if w == 1:
-        return n - num + 1
-    
+    if w == 1:      # w가 1일 때
+        return n - num + 1      # n - num이 곧 층수 차이
     
     n_floor, n_from_left, n_index = calculate(n, w)
-    
-    print(n_floor, n_from_left, n_index)
     num_floor, num_from_left, num_index = calculate(num, w)
-    print(num_floor, num_from_left, num_index)
     
     answer = n_floor - num_floor  # 층의 차이로 박스 계산 및 num 박스 1개도 포함
     
