@@ -1,11 +1,14 @@
-n = int(input())
-words_set = set()
+import sys
 
-for _ in range(n):
-    words_set.add(input())
+input = sys.stdin.readline
 
-words = sorted(list(words_set))
-words_sorted = sorted(words, key=len)
+N = int(input())
 
-for i in range(len(words_sorted)):
-    print(words_sorted[i])
+word_set = set()
+for _ in range(N):
+    word_set.add(input().strip())
+
+word_list = sorted(word_set, key=lambda x: (len(x), x))
+
+for word in word_list:
+    print(word)
